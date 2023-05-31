@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./page.module.css";
-import { Header } from "../components/header/header";
-import Data from "../data/data.json";
+import Data from "@/data/data.json";
+import { Header } from "@/components/header/header";
+import { DataProps } from "@/types/types";
 
 interface Home {}
 
@@ -20,7 +21,7 @@ export default async function Home({}) {
     <main className={styles.main}>
       <Header />
       <h1 className={styles.h1}>Stays in Finland</h1>
-      {data?.map((item) => {
+      {data?.map((item: DataProps, index: number) => {
         console.log(item);
 
         return <h3 className={styles.h1}>{item.title}</h3>;
