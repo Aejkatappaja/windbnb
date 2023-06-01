@@ -15,7 +15,7 @@ export default function Home() {
   const [city, setCity] = React.useState("");
   return (
     <main className={styles.main}>
-      <Header />
+      <Header city={city} setCity={setCity} data={data} />
       <div className={styles.line}>
         <h1 className={styles.h1}>Stays in Finland</h1>
         <span>
@@ -43,7 +43,6 @@ export default function Home() {
                     src={item.photo}
                     fill
                     alt="image"
-                    quality={5}
                     style={{ borderRadius: "1.55rem", objectFit: "cover" }}
                   />
                 </div>
@@ -65,7 +64,7 @@ export default function Home() {
             );
           })}
       </section>
-      <Modal />
+      <Modal data={data} setCity={setCity} />
     </main>
   );
 }

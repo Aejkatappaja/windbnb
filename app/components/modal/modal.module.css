@@ -11,4 +11,29 @@
   height: 40vh;
   margin: 0 auto;
   background-color: white;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modaltext {
+  height: 10rem;
+  width: 30rem;
+  border: solid;
+  display: flex;
+  color: black;
+  flex-direction: column;
+}
+
+.location {
+  color: #f35b5b;
+}
+
+.filter {
+  height: 6rem;
+  width: 80vw;
+  box-shadow: 0.02rem 0.02rem 0.2rem 0.09rem rgb(226, 226, 226);
+  border-radius: 1.1rem;
 }
