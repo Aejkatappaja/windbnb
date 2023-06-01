@@ -1,3 +1,5 @@
+import { Modal } from "./components/modal/modal";
+import { VisibleContextProvider } from "./context/isVisibleContext";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 
@@ -7,7 +9,7 @@ const montSerrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Windbnb",
+  title: "windbnb",
   description: "Windbnb",
 };
 
@@ -18,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montSerrat.className}>{children}</body>
+      <VisibleContextProvider>
+        <body className={montSerrat.className}>{children}</body>
+      </VisibleContextProvider>
     </html>
   );
 }

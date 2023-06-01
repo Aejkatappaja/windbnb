@@ -1,4 +1,4 @@
-export interface DataProps {
+export type DataProps = {
   city: string;
   country: string;
   superHost: boolean;
@@ -8,4 +8,4 @@ export interface DataProps {
   type: string;
   beds: number | null;
   photo: string;
-}
+};
