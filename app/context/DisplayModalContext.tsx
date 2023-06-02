@@ -1,0 +1,36 @@
+"use client";
+
+import React from "react";
+
+interface VisibleContextType {
+  isVisible: boolean;
+  setIsVisible: (isVisible: boolean) => void;
+}
+
+export const VisibleContext = React.createContext<VisibleContextType>({
+  isVisible: true,
+  setIsVisible: () => {},
+});
+
+interface ContextProviderProps {
+  children: React.ReactNode;
+}
+
+export const useVisibleContext = () => React.useContext(VisibleContext);
+
+export const VisibleContextProvider: React.FC<ContextProviderProps> = ({
+  children,
+}) => {
+  const [isVisible, setIsVisible] = React.useState<boolean>(true);
+
+  const contextValue: VisibleContextType = {
+    isVisible,
+    setIsVisible,
+  };
+
+  return (
+    <VisibleContext.Provider value={contextValue}>
+      {children}
+    </VisibleContext.Provider>
+  );
+};

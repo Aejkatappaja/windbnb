@@ -8,8 +8,8 @@ type CardProps = {
 };
 export const Card: React.FC<CardProps> = ({ stay }) => {
   return (
-    <div className="w-[26rem] aspect-[1/1] flex flex-col mb-4">
-      <div className="relative w-full h-[80%]">
+    <div className="mb-8 flex aspect-[1/1] w-[26rem] flex-col">
+      <div className="relative h-[80%] w-full">
         <Image
           src={stay.photo}
           fill
@@ -18,21 +18,21 @@ export const Card: React.FC<CardProps> = ({ stay }) => {
         />
       </div>
 
-      <div className=" mt-4 w-full h-8 flex items-center justify-between">
+      <div className=" mt-4 flex h-8 w-full items-center justify-between">
         <React.Fragment>
           {stay.superHost && (
-            <div className="border-2 border-wind rounded-md w-32 h-full text-sm font-semibold text-wind flex justify-center items-center">
+            <div className="flex h-full w-32 items-center justify-center rounded-md border-2 border-wind text-sm font-semibold text-wind">
               SUPER HOST
             </div>
           )}
           <p>{stay.type}</p>
           <span className="flex items-center">
             {stay.rating}
-            <FaStar className="text-wind ml-2 text-lg mb-[0.2rem]" />
+            <FaStar className="mb-[0.2rem] ml-2 text-lg text-wind" />
           </span>
         </React.Fragment>
       </div>
-      <div className="h-8 w-full mt-2 flex items-center font-medium">
+      <div className="mt-2 flex h-8 w-full items-center font-medium">
         {stay.title}
       </div>
     </div>
