@@ -1,4 +1,4 @@
-export type DataProps = {
+export type StayType = {
   city: string;
   country: string;
   superHost: boolean;
