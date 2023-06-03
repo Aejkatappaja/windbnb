@@ -8,7 +8,7 @@ interface VisibleContextType {
 }
 
 export const VisibleContext = React.createContext<VisibleContextType>({
-  isVisible: true,
+  isVisible: false,
   setIsVisible: () => {},
 });
 
@@ -21,7 +21,7 @@ export const useVisibleContext = () => React.useContext(VisibleContext);
 export const VisibleContextProvider: React.FC<ContextProviderProps> = ({
   children,
 }) => {
-  const [isVisible, setIsVisible] = React.useState<boolean>(true);
+  const [isVisible, setIsVisible] = React.useState<boolean>(false);
 
   const contextValue: VisibleContextType = {
     isVisible,

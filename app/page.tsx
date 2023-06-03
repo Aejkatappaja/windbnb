@@ -1,6 +1,6 @@
-import { Card } from "@/components/Card";
-import { getAllStays } from "./lib/stays";
-import { StayType } from "./types/stay";
+import { Card } from "../components/Card";
+import { getAllStays } from "../lib/stays";
+import { StayType } from "../types/stay";
 
 export default async function Home() {
   const data = await getAllStays();

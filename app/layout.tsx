@@ -1,8 +1,8 @@
-import { Header } from "@/components/Header";
-import "./globals.css";
+import { Header } from "../components/Header";
+import "@/globals.css";
 import { Montserrat } from "next/font/google";
-import { VisibleContextProvider } from "./context/DisplayModalContext";
-import { Modal } from "./components/Modal";
+import { VisibleContextProvider } from "../context/DisplayModalContext";
+import { Modal } from "../components/Modal";
 import React from "react";
 
 const montSerrat = Montserrat({

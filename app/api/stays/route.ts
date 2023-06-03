@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import data from "@/data/data.json";
+import stays from "@/data/stays.json";
 
 export async function GET() {
-  return NextResponse.json({ stays: data });
+  return NextResponse.json({ stays });
 }

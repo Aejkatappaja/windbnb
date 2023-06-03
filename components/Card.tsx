@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { StayType } from "@/types/stay";
+import { StayType } from "../types/stay";
 import { FaStar } from "react-icons/fa";
 
 type CardProps = {

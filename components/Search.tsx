@@ -1,5 +1,5 @@
 import React from "react";
-import { GoSearch } from "react-icons/go";
+import { ModalActivationButton } from "./ModalActivationButton";
 
 export const Search = () => {
   return (
@@ -11,7 +11,7 @@ export const Search = () => {
         Add guests
       </div>
       <div className="flex h-full w-[20%] items-center justify-center">
-        <GoSearch className="h-6 w-6 text-wind" />
+        <ModalActivationButton />
       </div>
     </div>
   );
