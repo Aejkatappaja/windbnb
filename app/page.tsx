@@ -4,6 +4,7 @@ import { StayType } from "../types/stay";
 
 export default async function Home() {
   const data = await getAllStays();
+
   return (
     <main className="bg-slate-50 text-black">
       <div className="flex items-center justify-between px-20 py-14">
@@ -14,6 +15,7 @@ export default async function Home() {
           return <Card key={index} stay={stay} />;
         })}
       </section>
+      {/* <Fetching /> */}
     </main>
   );
 }
