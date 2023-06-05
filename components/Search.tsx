@@ -3,7 +3,7 @@ import { ModalActivationButton } from "./ModalActivationButton";
 
 export const Search = () => {
   return (
-    <div className="flex h-16 w-96 rounded-lg text-gray-300 shadow-lg">
+    <div className="flex h-16 w-full rounded-lg text-gray-300 shadow-lg md:w-96">
       <div className="flex h-full w-[50%] items-center justify-center text-black">
         <p>Finland</p>
       </div>

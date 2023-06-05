@@ -8,7 +8,7 @@ type CardProps = {
 };
 export const Card: React.FC<CardProps> = ({ stay }) => {
   return (
-    <div className="mb-8 flex aspect-[1/1] w-[26rem] flex-col">
+    <div className="mb-8 flex aspect-[1/1] w-full flex-col md:w-[26rem]">
       <div className="relative h-[80%] w-full">
         <Image
           src={stay.photo}

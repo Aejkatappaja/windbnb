@@ -1,22 +1,32 @@
-// import { NextResponse } from "next/server";
-// import stays from "@/data/stays.json";
-
-// export async function GET() {
-//   return NextResponse.json({ stays });
-// }
 import { NextRequest, NextResponse } from "next/server";
+import { StayType } from "@/types/stay";
 import stays from "@/data/stays.json";
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const city = url.searchParams.get("city");
+  const guests = url.searchParams.get("guests");
 
-  // Vérifiez si la ville est présente dans la requête
-  if (city) {
-    const filteredStays = stays.filter((stay) => stay.city === city);
+  if (city && guests) {
+    const numGuests = parseInt(guests, 10);
+    const filteredStays = stays.filter(
+      (stay: StayType) => stay.city === city && stay.maxGuests >= numGuests
+    );
     return NextResponse.json({ stays: filteredStays });
   }
 
-  // Si la ville n'est pas spécifiée, retournez toutes les données
+  if (city) {
+    const filteredStays = stays.filter((stay: StayType) => stay.city === city);
+    return NextResponse.json({ stays: filteredStays });
+  }
+
+  if (guests) {
+    const numGuests = parseInt(guests, 10);
+    const filteredStays = stays.filter(
+      (stay: StayType) => stay.maxGuests >= numGuests
+    );
+    return NextResponse.json({ stays: filteredStays });
+  }
+
   return NextResponse.json({ stays });
 }
