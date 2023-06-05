@@ -3,7 +3,7 @@ import "@/globals.css";
 import { Montserrat } from "next/font/google";
 import { VisibleContextProvider } from "../context/DisplayModalContext";
 import { Modal } from "../components/Modal";
-import React from "react";
+import React, { Suspense } from "react";
 
 const montSerrat = Montserrat({
   subsets: ["latin"],

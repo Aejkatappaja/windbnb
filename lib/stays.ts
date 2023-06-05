@@ -10,22 +10,35 @@
 //   return data.json();
 // }
 
+import { StayType } from "@/types/stay";
 import { endpoint } from "@/utils/endpoint";
 
-export async function getAllStays(city?: string) {
+export async function getAllStays(
+  city?: string,
+  guests?: number
+): Promise<StayType[]> {
   let url = `${endpoint}/stays`;
 
   if (city) {
     url += `?city=${city}`;
   }
 
-  const data = await fetch(url);
+  if (guests) {
+    url += `?guests=${guests}`;
+  }
 
-  if (!data.ok) {
+  if (city && guests) {
+    url += `?city=${city}&guests=${guests}`;
+  }
+  const res = await fetch(url);
+
+  const data = await res.json();
+
+  if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  return data.json();
+  return data.stays;
 }
 
 // import { NextRequest, NextResponse } from "next/server";
