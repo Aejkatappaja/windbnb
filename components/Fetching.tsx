@@ -7,16 +7,16 @@ import { Card } from "./Card";
 import { useDataStore } from "@/lib/state-manager/store";
 
 export default function Fetching() {
-  const { city, data, setData } = useDataStore();
+  const { city, data, setData, guests } = useDataStore();
 
   React.useEffect(() => {
     async function fetchData() {
-      const stays = await getAllStays(city);
+      const stays = await getAllStays(city, guests);
       setData(stays);
     }
 
     fetchData();
-  }, [city, setData]);
+  }, [city, setData, guests]);
 
   return (
     <section className="mx-auto flex h-full w-[95vw] flex-wrap justify-around bg-slate-50">

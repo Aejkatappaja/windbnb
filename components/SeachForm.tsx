@@ -11,12 +11,13 @@ interface SearchFormProps {}
 export const SearchForm: React.FC<SearchFormProps> = () => {
   const { setIsVisible } = React.useContext(VisibleContext);
   const [currentCity, setCurrentCity] = React.useState<string>("");
-  const [guests, setGuests] = React.useState<number>(0);
-  const { setCity, city } = useDataStore();
+  const [guestNumber, setGuestNumber] = React.useState<number>(0);
+  const { setCity, city, guests, setGuests } = useDataStore();
 
   const OnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setCity(currentCity);
+    setGuests(guestNumber);
     setIsVisible(false);
   };
   return (
@@ -41,7 +42,7 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
           <input
             type="number"
             id="guests"
-            value={guests > 0 ? guests : ""}
+            value={guestNumber > 0 ? guestNumber : guests}
             readOnly={true}
             placeholder="Add guests"
           />
@@ -67,11 +68,15 @@ export const SearchForm: React.FC<SearchFormProps> = () => {
           })}
         </div>
         <div className="w-[32%] border-2">
-          <button onClick={() => setGuests((prev) => (prev = guests - 1))}>
+          <button
+            onClick={() => setGuestNumber((prev) => (prev = guestNumber - 1))}
+          >
             -
           </button>
-          {guests}{" "}
-          <button onClick={() => setGuests((prev) => (prev = guests + 1))}>
+          {guestNumber}{" "}
+          <button
+            onClick={() => setGuestNumber((prev) => (prev = guestNumber + 1))}
+          >
             +
           </button>
         </div>
