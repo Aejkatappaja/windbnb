@@ -8,7 +8,6 @@ import { SearchBar } from "./SearchBar";
 
 export const Modal = () => {
   const { isVisible, setIsVisible } = React.useContext(VisibleContext);
-  const { setCity } = useDataStore();
 
   return isVisible ? (
     <div
@@ -16,17 +15,10 @@ export const Modal = () => {
       onClick={() => setIsVisible(!isVisible)}
     >
       <div
-        className="z-50 mx-auto flex h-80 w-full flex-col items-center justify-center border-2 bg-slate-50"
+        className="z-50 mx-auto flex h-80 w-full flex-col items-center justify-center gap-6 bg-slate-50"
         onClick={(e) => e.stopPropagation()}
       >
         <SearchBar variant="modal" />
-        {City.map((city: string, index: number) => {
-          return (
-            <p key={index} onClick={() => setCity(city)}>
-              {city}
-            </p>
-          );
-        })}
       </div>
     </div>
   ) : null;
