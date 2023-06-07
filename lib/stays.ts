@@ -7,17 +7,20 @@ export async function getAllStays(
 ): Promise<StayType[]> {
   let url = `${endpoint}/stays`;
 
+  const queryParams: string[] = [];
+
   if (city) {
-    url += `?city=${city}`;
+    queryParams.push(`city=${city}`);
   }
 
   if (guests) {
-    url += `?guests=${guests}`;
+    queryParams.push(`guests=${guests}`);
   }
 
-  if (city && guests) {
-    url += `?city=${city}&guests=${guests}`;
+  if (queryParams.length > 0) {
+    url += `?${queryParams.join("&")}`;
   }
+
   const res: Response = await fetch(url);
 
   const data = await res.json();

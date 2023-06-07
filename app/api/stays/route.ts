@@ -12,6 +12,9 @@ export async function GET(request: NextRequest) {
     const filteredStays = stays.filter(
       (stay: StayType) => stay.city === city && stay.maxGuests >= numGuests
     );
+    console.log("city-----", city, "guests------", numGuests);
+
+    console.log(filteredStays);
     return NextResponse.json({ stays: filteredStays });
   }
 
@@ -25,6 +28,7 @@ export async function GET(request: NextRequest) {
     const filteredStays = stays.filter(
       (stay: StayType) => stay.maxGuests >= numGuests
     );
+
     return NextResponse.json({ stays: filteredStays });
   }
 

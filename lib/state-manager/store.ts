@@ -1,5 +1,5 @@
 import { StayType } from "@/types/stay";
-import create from "zustand";
+import { create } from "zustand";
 
 interface DataStoreState {
   data: StayType[];

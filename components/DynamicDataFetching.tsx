@@ -20,9 +20,21 @@ export default function DynamicDataFetching() {
 
   return (
     <section className="mx-auto flex h-full w-[95vw] flex-wrap justify-around bg-slate-50">
-      {data?.map((stay: StayType, index: number) => {
-        return <StayCard key={index} stay={stay} />;
-      })}
+      {data.length > 0 ? (
+        data?.map((stay: StayType, index: number) => {
+          return <StayCard key={index} stay={stay} />;
+        })
+      ) : (
+        <>
+          <h1 className="font-semibold">NO RESULTS FOUND</h1>
+          <a
+            href="/"
+            className="cursor-pointer font-semibold text-wind hover:translate-y-1"
+          >
+            Reset filters
+          </a>
+        </>
+      )}
     </section>
   );
 }
