@@ -3,10 +3,10 @@ import Image from "next/image";
 import { StayType } from "../types/stay";
 import { FaStar } from "react-icons/fa";
 
-type CardProps = {
+type StayCardProps = {
   stay: StayType;
 };
-export const Card: React.FC<CardProps> = ({ stay }) => {
+export const StayCard: React.FC<StayCardProps> = ({ stay }) => {
   return (
     <div className="mb-8 flex aspect-[1/1] w-full flex-col md:w-[26rem]">
       <div className="relative h-[80%] w-full">

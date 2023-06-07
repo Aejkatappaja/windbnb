@@ -3,10 +3,10 @@
 import { getAllStays } from "@/lib/stays";
 import { StayType } from "@/types/stay";
 import React from "react";
-import { Card } from "./Card";
+import { StayCard } from "./StayCard";
 import { useDataStore } from "@/lib/state-manager/store";
 
-export default function Fetching() {
+export default function DynamicDataFetching() {
   const { city, data, setData, guests } = useDataStore();
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ export default function Fetching() {
   return (
     <section className="mx-auto flex h-full w-[95vw] flex-wrap justify-around bg-slate-50">
       {data?.map((stay: StayType, index: number) => {
-        return <Card key={index} stay={stay} />;
+        return <StayCard key={index} stay={stay} />;
       })}
     </section>
   );

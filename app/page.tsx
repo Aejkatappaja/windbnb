@@ -1,17 +1,14 @@
-import Fetching from "@/components/Fetching";
+import DynamicDataFetching from "@/components/DynamicDataFetching";
+import { StayTitle } from "@/components/StaysTitle";
 
 export default async function Home() {
   return (
     <main className="bg-slate-50 text-black">
       <div className="flex items-center justify-between px-6 py-14 md:px-14">
         <h1 className="text-2xl font-bold">Stays in Finland</h1>
+        <StayTitle />
       </div>
-      {/* <section className="mx-auto flex h-full w-[95vw] flex-wrap justify-around">
-        {data.map((stay: StayType, index: number) => {
-          return <Card key={index} stay={stay} />;
-        })}
-      </section> */}
-      <Fetching />
+      <DynamicDataFetching />
     </main>
   );
 }

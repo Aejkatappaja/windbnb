@@ -1,7 +1,8 @@
 import React from "react";
 import { ModalActivationButton } from "./ModalActivationButton";
-import { CityParagraph } from "./CityParagraph";
+import { CityParagraph } from "./CityName";
 import { SearchForm } from "./SeachForm";
+import { GuestNumber } from "./GuestNumber";
 
 type SearchBarProps = {
   variant?: string;
@@ -16,7 +17,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ variant }) => {
         <CityParagraph />
       </div>
       <div className="flex h-full w-[30%] items-center justify-center border-l-[0.07rem] border-r-[0.07rem] border-gray-200 text-sm">
-        Add guests
+        <GuestNumber />
       </div>
       <div className="flex h-full w-[20%] items-center justify-center">
         <ModalActivationButton />
