@@ -1,5 +1,4 @@
 "use client";
-
 import { VisibleContext } from "../context/DisplayModalContext";
 import React from "react";
 import { SearchBar } from "./SearchBar";
