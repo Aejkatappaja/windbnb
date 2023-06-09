@@ -1,5 +1,8 @@
 import DynamicDataFetching from "@/components/DynamicDataFetching";
+
 import { StayTitle } from "@/components/StaysTitle";
+
+import React from "react";
 
 export default async function Home() {
   return (
