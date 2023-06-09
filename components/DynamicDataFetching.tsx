@@ -20,10 +20,9 @@ export default function DynamicDataFetching() {
 
   return (
     <section className="mx-auto flex h-full w-[95vw] flex-wrap justify-around bg-slate-50">
-      {data.length > 0 &&
-        data?.map((stay: StayType, index: number) => {
-          return <StayCard key={index} stay={stay} />;
-        })}
+      {data?.map((stay: StayType, index: number) => {
+        return <StayCard key={index} stay={stay} />;
+      })}
     </section>
   );
 }
